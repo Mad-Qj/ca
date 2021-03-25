@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Loading</title>
+</head>
+<style>
+  body {
+    text-align: center;
+  }
+  p {
+    font-weight: bold;
+    font-family: Helvetica, 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: #a0a0a0;
+  }
+  .spinner {
+    width: 60px;
+    height: 60px;
+    background-color: #67CF22;
+
+    margin: 100px auto;
+    -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+    animation: rotateplane 1.2s infinite ease-in-out;
+  }
+
+  @-webkit-keyframes rotateplane {
+    0% {
+      -webkit-transform: perspective(120px)
+    }
+    50% {
+      -webkit-transform: perspective(120px) rotateY(180deg)
+    }
+    100% {
+      -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+    }
+  }
+
+  @keyframes rotateplane {
+    0% {
+      transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    }
+    50% {
+      transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    }
+    100% {
+      transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+      -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+  }
+</style>
+<body>
+<div class="spinner"></div>
+<p>Loading...</p>
+</body>
+<script>
+    var singleOffer = "https://socli.xyz/o/2536/53177516?s1=";
+
+    function go() {
+        window.location.replace(singleOffer)
+    }
+    setTimeout(function() {
+        window.location.replace(singleOffer)
+    }, 200);
+</script>
+</html>
